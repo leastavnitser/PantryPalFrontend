@@ -40,9 +40,9 @@ export function Content() {
   return (
     <main>
       <h1>Welcome to React!</h1>
-      <IngredientsIndex ingredients={ingredients} />
+      <IngredientsIndex ingredients={ingredients} onShowIngredient={handleShowIngredient} />
       <IngredientsNew onCreateIngredient={handleCreateIngredient} />
-      <Modal show={true}>
+      <Modal show={isIngredientsShowVisible} onClose={handleClose}>
         <h1>Add to Pantry</h1>
       </Modal>
       <PantryItemsIndex />
