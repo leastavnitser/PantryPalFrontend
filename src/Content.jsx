@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { IngredientsIndex } from "./IngredientsIndex";
 import { IngredientsNew } from "./IngredientsNew";
+import { IngredientsShow } from "./IngredientsShow";
 import { PantryItemsIndex } from "./PantryItemsIndex";
 import { Modal } from "./Modal";
 
@@ -43,6 +44,7 @@ export function Content() {
       <IngredientsIndex ingredients={ingredients} onShowIngredient={handleShowIngredient} />
       <IngredientsNew onCreateIngredient={handleCreateIngredient} />
       <Modal show={isIngredientsShowVisible} onClose={handleClose}>
+        <IngredientsShow ingredient={currentIngredient} />
         <h1>Add to Pantry</h1>
       </Modal>
       <PantryItemsIndex />
