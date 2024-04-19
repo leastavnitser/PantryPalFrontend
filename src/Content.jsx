@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { IngredientsIndex } from "./IngredientsIndex";
 import { IngredientsNew } from "./IngredientsNew";
 import { PantryItemsIndex } from "./PantryItemsIndex";
+import { Modal } from "./Modal";
 
 export function Content() {
   const [ingredients, setIngredients] = useState([]);
@@ -29,6 +30,9 @@ export function Content() {
       <h1>Welcome to React!</h1>
       <IngredientsIndex ingredients={ingredients} />
       <IngredientsNew onCreateIngredient={handleCreateIngredient} />
+      <Modal show={true}>
+        <h1>Add to Pantry</h1>
+      </Modal>
       <PantryItemsIndex />
     </main>
   );
