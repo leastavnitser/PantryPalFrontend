@@ -43,19 +43,20 @@ export function Content() {
   useEffect(handleIndexIngredients, []);
   return (
     <main>
-      <h1>Welcome to React!</h1>
+      <h1>Welcome to PantryPal!</h1>
+      <div className="container">
+        <IngredientsIndex ingredients={ingredients} onShowIngredient={handleShowIngredient} />
+        <IngredientsNew onCreateIngredient={handleCreateIngredient} />
+        <Modal show={isIngredientsShowVisible} onClose={handleClose}>
+          <IngredientsShow ingredient={currentIngredient} />
+          <h1>Add to Pantry</h1>
+        </Modal>
 
-      <IngredientsIndex ingredients={ingredients} onShowIngredient={handleShowIngredient} />
-      <IngredientsNew onCreateIngredient={handleCreateIngredient} />
-      <Modal show={isIngredientsShowVisible} onClose={handleClose}>
-        <IngredientsShow ingredient={currentIngredient} />
-        <h1>Add to Pantry</h1>
-      </Modal>
-
-      <PantryItemsIndex />
-      <Login />
-      <Signup />
-      <LogoutLink />
+        <PantryItemsIndex />
+        <Login />
+        <Signup />
+        <LogoutLink />
+      </div>
     </main>
   );
 }
