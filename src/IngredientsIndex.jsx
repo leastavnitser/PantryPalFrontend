@@ -10,7 +10,7 @@ export function IngredientsIndex(props) {
               <div className="card">
                 <img src={ingredient.image_url} className="card-img-top" alt="..." />
                 <h2>{ingredient.name}</h2>
-                <button onClick={() => props.onShowIngredient(ingredient)} className="btn btn-warning">
+                <button onClick={() => props.onShowIngredient(ingredient)} className="btn btn-danger-">
                   Add to myPantry
                 </button>
               </div>
