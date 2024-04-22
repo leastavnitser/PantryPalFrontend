@@ -6,7 +6,7 @@ export function Header() {
         <a href="#">MyRecipes</a>
       </nav> */}
       <div className="banner">
-        <nav className="navbar navbar-expand-lg  navbar-light ">
+        <nav className="navbar" style={{ backgroundColor: "#e3f2fd;" }}>
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
               PantryPal
@@ -25,7 +25,7 @@ export function Header() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link " aria-current="page" href="#">
+                  <a className="nav-link " aria-current="page" href="#signup">
                     SignUp
                   </a>
                 </li>
