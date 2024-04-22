@@ -26,17 +26,17 @@ export function Header() {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <a className="nav-link " aria-current="page" href="#">
-                    Home
+                    SignUp
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#reservations-new">
-                    Book a Room
+                    LogIn
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#rooms-index">
-                    All Rooms
+                    myPantry
                   </a>
                 </li>
                 <li className="nav-item">
@@ -44,7 +44,7 @@ export function Header() {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#signup">
-                    Signup
+                    myRecipes
                   </a>
                 </li>
               </ul>
