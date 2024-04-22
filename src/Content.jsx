@@ -5,6 +5,7 @@ import { IngredientsNew } from "./IngredientsNew";
 import { IngredientsShow } from "./IngredientsShow";
 import { PantryItemsIndex } from "./PantryItemsIndex";
 import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
 import { Modal } from "./Modal";
 import { Signup } from "./Signup";
 
@@ -45,6 +46,7 @@ export function Content() {
       <h1>Welcome to React!</h1>
       <Login />
       <Signup />
+      <LogoutLink />
       <IngredientsIndex ingredients={ingredients} onShowIngredient={handleShowIngredient} />
       <IngredientsNew onCreateIngredient={handleCreateIngredient} />
       <Modal show={isIngredientsShowVisible} onClose={handleClose}>
