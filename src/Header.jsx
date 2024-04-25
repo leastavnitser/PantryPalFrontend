@@ -1,12 +1,8 @@
 export function Header() {
   return (
     <header>
-      {/* <nav>
-        <a href="#">Home</a> | <a href="">SignUp</a> |<a href="#">LogIn</a> |<a href="#">MyPantry</a> |{" "}
-        <a href="#">MyRecipes</a>
-      </nav> */}
       <div className="banner">
-        <nav className="navbar" style={{ backgroundColor: "#e3f2fd;" }}>
+        <nav className="navbar">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
               PantryPal
@@ -30,18 +26,16 @@ export function Header() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#reservations-new">
+                  <a className="nav-link" href="#login">
                     LogIn
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#rooms-index">
+                  <a className="nav-link" href="#pantry-items">
                     myPantry
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link">Login </a>
-                </li>
+
                 <li className="nav-item">
                   <a className="nav-link" href="#signup">
                     myRecipes

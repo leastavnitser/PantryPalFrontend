@@ -7,13 +7,6 @@ export function IngredientsShow(props) {
     props.onCreatePantry(params, () => event.target.reset());
     window.location.href = "/ingredients";
   };
-  // return (
-  //   <div>
-  //     <h1>Ingredient information</h1>
-  //     <img src={props.ingredient.image_url} />
-  //     <p>Name: {props.ingredient.name}</p>
-  //   </div>
-  // );
   return (
     <div>
       <h3>Ingredient Information</h3>
