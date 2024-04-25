@@ -3,6 +3,7 @@ import "./Modal.css";
 export funtion SignUpModal(props){
   return(
     
+    
   );
 }
 // export function Modal(props) {

@@ -21,6 +21,13 @@ export function Content() {
       setIngredients(response.data);
     });
   };
+  const handleCreatePantryItem = (params, successCallback) => {
+    console.log("handleCreatePantryItem", params);
+    axios.post("http://localhost:3000/pantry_items.json", params).then((response) => {
+      setPantryItems([...pantry_items, response.data]);
+      successCallback();
+    });
+  };
 
   const handleCreateIngredient = (params, successCallback) => {
     console.log("handleCreateIngredient", params);
@@ -49,7 +56,6 @@ export function Content() {
         <IngredientsNew onCreateIngredient={handleCreateIngredient} />
         <Modal show={isIngredientsShowVisible} onClose={handleClose}>
           <IngredientsShow ingredient={currentIngredient} />
-          <h1>Add to Pantry</h1>
         </Modal>
 
         <PantryItemsIndex />
