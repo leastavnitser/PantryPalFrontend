@@ -21,7 +21,7 @@ export function Content() {
       setIngredients(response.data);
     });
   };
-  const [pantry_items, setPantryItems] = useState([]);
+  const [pantryItems, setPantryItems] = useState([]);
   const [isPantryItemsShowVisible, setIsPantryItemsShowVisible] = useState([]);
   const [currentPantryItem, setCurrentPantryItem] = useState([]);
 
@@ -70,12 +70,13 @@ export function Content() {
       <h1>Welcome to PantryPal!</h1>
       <div className="container">
         <IngredientsIndex ingredients={ingredients} onShowIngredient={handleShowIngredient} />
+        <PantryItemsIndex pantry_items={pantryItems} onShowPantryItems={handleShowPantryItem} />
         <IngredientsNew onCreateIngredient={handleCreateIngredient} />
+
         <Modal show={isIngredientsShowVisible} onClose={handleClose}>
           <IngredientsShow ingredient={currentIngredient} onCreatePantryItem={handleCreatePantryItem} />
         </Modal>
 
-        <PantryItemsIndex pantry_items={pantry_items} onShowPantryItems={handleShowPantryItem} />
         <Login />
         <Signup />
         <LogoutLink />

@@ -9,13 +9,17 @@ export function IngredientsNew(props) {
     <div>
       <h1>New Ingredient</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          Name: <input name="name" type="text" />
+        <div className="row g-3">
+          <div className="col">
+            Name: <input name="name" type="text" className="form-control" />
+          </div>
+          <div className="col">
+            Image Url: <input name="image_url" type="text" className="form-control" />
+          </div>
+          <button type="submit" className="btn btn-outline-danger">
+            Create Ingredient
+          </button>
         </div>
-        <div>
-          Image Url: <input name="image_url" type="text" />
-        </div>
-        <button type="submit">Create Ingredient</button>
       </form>
     </div>
   );
