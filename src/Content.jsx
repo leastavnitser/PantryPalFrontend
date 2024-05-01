@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { IngredientsIndex } from "./IngredientsIndex";
 import { IngredientsNew } from "./IngredientsNew";
@@ -40,11 +41,11 @@ export function Content() {
       successCallback();
     });
   };
-  const handleShowPantryItem = (pantry_item) => {
-    console.log("handleShowPantryItem", pantry_item);
-    setIsPantryItemsShowVisible(true);
-    setCurrentPantryItem(pantry_item);
-  };
+  // const handleShowPantryItem = (pantry_item) => {
+  //   console.log("handleShowPantryItem", pantry_item);
+  //   setIsPantryItemsShowVisible(true);
+  //   setCurrentPantryItem(pantry_item);
+  // };
 
   const handleCreateIngredient = (params, successCallback) => {
     console.log("handleCreateIngredient", params);
@@ -65,22 +66,24 @@ export function Content() {
   };
 
   useEffect(handleIndexIngredients, []);
+  useEffect(handleIndexPantryItems, []);
   return (
-    <main>
+    <main className="container">
       <h1>Welcome to PantryPal!</h1>
-      <div className="container">
-        <IngredientsIndex ingredients={ingredients} onShowIngredient={handleShowIngredient} />
-        <PantryItemsIndex pantry_items={pantryItems} onShowPantryItems={handleShowPantryItem} />
-        <IngredientsNew onCreateIngredient={handleCreateIngredient} />
-
-        <Modal show={isIngredientsShowVisible} onClose={handleClose}>
-          <IngredientsShow ingredient={currentIngredient} onCreatePantryItem={handleCreatePantryItem} />
-        </Modal>
-
-        <Login />
-        <Signup />
-        <LogoutLink />
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={<IngredientsIndex ingredients={ingredients} onShowIngredient={handleShowIngredient} />}
+        />
+        <Route path="/pantry" element={<PantryItemsIndex pantryItems={pantryItems} />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/logout" element={<LogoutLink />} />
+      </Routes>
+      <IngredientsNew onCreateIngredient={handleCreateIngredient} />ˆ
+      <Modal show={isIngredientsShowVisible} onClose={handleClose}>
+        <IngredientsShow ingredient={currentIngredient} onCreatePantryItem={handleCreatePantryItem} />
+      </Modal>
     </main>
   );
 }
