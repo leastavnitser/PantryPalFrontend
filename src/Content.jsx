@@ -41,11 +41,6 @@ export function Content() {
       successCallback();
     });
   };
-  // const handleShowPantryItem = (pantry_item) => {
-  //   console.log("handleShowPantryItem", pantry_item);
-  //   setIsPantryItemsShowVisible(true);
-  //   setCurrentPantryItem(pantry_item);
-  // };
 
   const handleCreateIngredient = (params, successCallback) => {
     console.log("handleCreateIngredient", params);
@@ -66,8 +61,9 @@ export function Content() {
   };
   const handleDestroyPantryItem = (pantryItem) => {
     // eslint-disable-next-line no-unused-vars
+    console.log(pantryItem);
     axios.delete(`http://localhost:3000/pantry_items/${pantryItem.id}.json`).then((response) => {
-      setPantryItems(pantryItems.filter((pantryItem) => pantryItem.id !== id));
+      setPantryItems(pantryItems.filter((pI) => pI.id !== pantryItem.id));
       handleClose();
     });
   };
@@ -90,7 +86,7 @@ export function Content() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/logout" element={<LogoutLink />} />
       </Routes>
-      <IngredientsNew onCreateIngredient={handleCreateIngredient} />ˆ
+      <IngredientsNew onCreateIngredient={handleCreateIngredient} />
       <Modal show={isIngredientsShowVisible} onClose={handleClose}>
         <IngredientsShow ingredient={currentIngredient} onCreatePantryItem={handleCreatePantryItem} />
       </Modal>

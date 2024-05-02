@@ -40,8 +40,8 @@ export function Header() {
                 myPantry
               </Link>
 
-              <Link className="nav-link" to="/signup">
-                myRecipes
+              <Link className="nav-link" to="/">
+                Ingredients
               </Link>
             </div>
           </div>
