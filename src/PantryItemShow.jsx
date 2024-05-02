@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 export function PantryItemShow(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -9,7 +8,7 @@ export function PantryItemShow(props) {
     const amount = `${number} ${unit}`;
     formData.set("amount", amount);
 
-    props.onUpdatePantryItem(props.pantryItem.id, formData, () => event.target.reset());
+    // props.onUpdatePantryItem(props.pantryItem.id, formData, () => event.target.reset());
     window.location.href = "/pantry";
   };
   return (

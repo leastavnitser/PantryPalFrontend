@@ -38,14 +38,14 @@ export function Content() {
   const handleCreatePantryItem = (params, successCallback) => {
     console.log("handleCreatePantryItem", params);
     axios.post("http://localhost:3000/pantry_items.json", params).then((response) => {
-      setPantryItems([...pantry_items, response.data]);
+      setPantryItems([...pantryItems, response.data]);
       successCallback();
     });
   };
 
   const handleUpdatePantryItem = (id, params, successCallback) => {
     console.log("handleUpdatePantryItem", params);
-    axios.patch("http://localhost:3000/pantry_items/${pantryItem.id}.json", params).then((response) => {
+    axios.patch(`http://localhost:3000/pantry_items/${id}.json`, params).then((response) => {
       setPantryItems(
         pantryItems.map((pantryItem) => {
           if (pantryItem.id === response.data.id) {
@@ -100,6 +100,7 @@ export function Content() {
   const handleDestroyPantryItem = (pantryItem) => {
     // eslint-disable-next-line no-unused-vars
     console.log(pantryItem);
+    // eslint-disable-next-line no-unused-vars
     axios.delete(`http://localhost:3000/pantry_items/${pantryItem.id}.json`).then((response) => {
       setPantryItems(pantryItems.filter((pI) => pI.id !== pantryItem.id));
       handleClose();
