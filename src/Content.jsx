@@ -49,15 +49,35 @@ export function Content() {
       successCallback();
     });
   };
+  // const handleUpdatePantryItem = (id, params) => {
+  //   axios.patch(`http://localhost:3000/pantry_items/${id}.json`, params).then((response) => {
+  //     setPantryItems(
+  //       pantryItems.map((pantryItem) => {
+  //         if (pantryItem.id === response.data.id) {
+  //           return response.data;
+  //         } else {
+  //           return pantryItem;
+  //         }
+  //       })
+  //     );
+  //     handleClose();
+  //   });
+  // };
   const handleShowIngredient = (ingredient) => {
     console.log("handleShowIngredient", ingredient);
     setIsIngredientsShowVisible(true);
     setCurrentIngredient(ingredient);
   };
+  const handleShowPantryItem = (pantryItem) => {
+    console.log("handleShowPantryItem", pantryItem);
+    setIsPantryItemsShowVisible(true);
+    setCurrentPantryItem(pantryItem);
+  };
 
   const handleClose = () => {
     console.log("handleClose");
     setIsIngredientsShowVisible(false);
+    setIsPantryItemsShowVisible(false);
   };
   const handleDestroyPantryItem = (pantryItem) => {
     // eslint-disable-next-line no-unused-vars
@@ -80,7 +100,13 @@ export function Content() {
         />
         <Route
           path="/pantry"
-          element={<PantryItemsIndex onDestroyPantryItem={handleDestroyPantryItem} pantryItems={pantryItems} />}
+          element={
+            <PantryItemsIndex
+              onDestroyPantryItem={handleDestroyPantryItem}
+              pantryItems={pantryItems}
+              // onUpdatePantryItem={handleUpdatePantryItem}
+            />
+          }
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
