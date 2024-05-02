@@ -64,9 +64,9 @@ export function Content() {
     console.log("handleClose");
     setIsIngredientsShowVisible(false);
   };
-  const handleDestroyPantryItem = (id) => {
+  const handleDestroyPantryItem = (pantryItem) => {
     // eslint-disable-next-line no-unused-vars
-    axios.delete(`http://localhost:3000/pantry_items/${id}.json`).then((response) => {
+    axios.delete(`http://localhost:3000/pantry_items/${pantryItem.id}.json`).then((response) => {
       setPantryItems(pantryItems.filter((pantryItem) => pantryItem.id !== id));
       handleClose();
     });

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 export function PantryItemsIndex(props) {
   const handleClick = () => {
-    props.onDestroyPantryItem(props.pantryItem.id);
+    props.onDestroyPantryItem(props.pantryItem);
   };
   if (!props.pantryItems || props.pantryItems.length === 0) {
     return (
