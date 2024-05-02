@@ -5,6 +5,7 @@ import { IngredientsIndex } from "./IngredientsIndex";
 import { IngredientsNew } from "./IngredientsNew";
 import { IngredientsShow } from "./IngredientsShow";
 import { PantryItemsIndex } from "./PantryItemsIndex";
+import { PantryItemShow } from "./PantryItemShow";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
 import { Modal } from "./Modal";
@@ -23,7 +24,7 @@ export function Content() {
     });
   };
   const [pantryItems, setPantryItems] = useState([]);
-  const [isPantryItemsShowVisible, setIsPantryItemsShowVisible] = useState([]);
+  const [isPantryItemShowVisible, setIsPantryItemShowVisible] = useState(false);
   const [currentPantryItem, setCurrentPantryItem] = useState([]);
 
   const handleIndexPantryItems = () => {
@@ -39,6 +40,23 @@ export function Content() {
     axios.post("http://localhost:3000/pantry_items.json", params).then((response) => {
       setPantryItems([...pantry_items, response.data]);
       successCallback();
+    });
+  };
+
+  const handleUpdatePantryItem = (id, params, successCallback) => {
+    console.log("handleUpdatePantryItem", params);
+    axios.patch("http://localhost:3000/pantry_items/${pantryItem.id}.json", params).then((response) => {
+      setPantryItems(
+        pantryItems.map((pantryItem) => {
+          if (pantryItem.id === response.data.id) {
+            return response.data;
+          } else {
+            return pantryItem;
+          }
+        })
+      );
+      successCallback();
+      handleClose();
     });
   };
 
@@ -70,14 +88,14 @@ export function Content() {
   };
   const handleShowPantryItem = (pantryItem) => {
     console.log("handleShowPantryItem", pantryItem);
-    setIsPantryItemsShowVisible(true);
+    setIsPantryItemShowVisible(true);
     setCurrentPantryItem(pantryItem);
   };
 
   const handleClose = () => {
     console.log("handleClose");
     setIsIngredientsShowVisible(false);
-    setIsPantryItemsShowVisible(false);
+    setIsPantryItemShowVisible(false);
   };
   const handleDestroyPantryItem = (pantryItem) => {
     // eslint-disable-next-line no-unused-vars
@@ -104,7 +122,7 @@ export function Content() {
             <PantryItemsIndex
               onDestroyPantryItem={handleDestroyPantryItem}
               pantryItems={pantryItems}
-              // onUpdatePantryItem={handleUpdatePantryItem}
+              onShowPantryItem={handleShowPantryItem}
             />
           }
         />
@@ -115,6 +133,9 @@ export function Content() {
       <IngredientsNew onCreateIngredient={handleCreateIngredient} />
       <Modal show={isIngredientsShowVisible} onClose={handleClose}>
         <IngredientsShow ingredient={currentIngredient} onCreatePantryItem={handleCreatePantryItem} />
+      </Modal>
+      <Modal show={isPantryItemShowVisible} onClose={handleClose}>
+        <PantryItemShow pantryItem={currentPantryItem} onUpdatePantryItem={handleUpdatePantryItem} />
       </Modal>
     </main>
   );

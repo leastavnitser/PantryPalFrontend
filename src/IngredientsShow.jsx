@@ -3,9 +3,6 @@
 export function IngredientsShow(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const params = new FormData(event.target);
-    // props.onCreatePantryItem(params, () => event.target.reset());
-    // window.location.href = "/ingredients";
 
     const formData = new FormData(event.target);
     const number = formData.get("number");

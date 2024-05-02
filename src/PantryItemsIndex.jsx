@@ -25,6 +25,7 @@ export function PantryItemsIndex(props) {
               <p>Expiration: {pantryItem.use_by_date}</p>
               <img src={pantryItem.image_url} className="card-img-top" alt="..." />
               <button onClick={() => handleClick(pantryItem)}>Delete PantryItem</button>
+              <button onClick={() => props.onShowPantryItem(pantryItem)}>cute button</button>
             </div>
           </div>
         ))}
