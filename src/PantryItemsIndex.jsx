@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
 export function PantryItemsIndex(props) {
+  const handleClick = () => {
+    props.onDestroyPantryItem(props.pantryItem.id);
+  };
   if (!props.pantryItems || props.pantryItems.length === 0) {
     return (
       <div>
@@ -18,11 +21,10 @@ export function PantryItemsIndex(props) {
             <div className="border-warning mb-3">
               <h5>Category: {pantryItem.category}</h5>
               <h4>{pantryItem.name}</h4>
-              <p>
-                Amount: {pantryItem.amount} {pantryItem.units}
-              </p>
+              <p>Amount: {pantryItem.amount}</p>
               <p>Expiration: {pantryItem.use_by_date}</p>
               <img src={pantryItem.image_url} className="card-img-top" alt="..." />
+              <button onClick={handleClick}>Delete PantryItem</button>
             </div>
           </div>
         ))}

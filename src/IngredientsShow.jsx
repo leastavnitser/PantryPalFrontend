@@ -3,9 +3,18 @@
 export function IngredientsShow(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
-    const params = new FormData(event.target);
-    props.onCreatePantryItem(params, () => event.target.reset());
-    window.location.href = "/ingredients";
+    // const params = new FormData(event.target);
+    // props.onCreatePantryItem(params, () => event.target.reset());
+    // window.location.href = "/ingredients";
+
+    const formData = new FormData(event.target);
+    const number = formData.get("number");
+    const unit = formData.get("unit");
+    const amount = `${number} ${unit}`;
+    formData.set("amount", amount);
+
+    props.onCreatePantryItem(formData, () => event.target.reset());
+    window.location.href = "/pantry";
   };
   return (
     <div>
@@ -19,7 +28,7 @@ export function IngredientsShow(props) {
         </div>
         <div className="row mb-3">
           <div className="col-sm-3">
-            Amount: <input className="form-control" name="amount" type="text" />
+            Amount: <input className="form-control" name="number" type="text" />
             <div className="col-sm-9">
               <select className="form-control" name="unit">
                 <option value="oz">Ounces (oz)</option>

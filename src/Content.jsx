@@ -64,6 +64,13 @@ export function Content() {
     console.log("handleClose");
     setIsIngredientsShowVisible(false);
   };
+  const handleDestroyPantryItem = (id) => {
+    // eslint-disable-next-line no-unused-vars
+    axios.delete(`http://localhost:3000/pantry_items/${id}.json`).then((response) => {
+      setPantryItems(pantryItems.filter((pantryItem) => pantryItem.id !== id));
+      handleClose();
+    });
+  };
 
   useEffect(handleIndexIngredients, []);
   useEffect(handleIndexPantryItems, []);
@@ -75,7 +82,10 @@ export function Content() {
           path="/"
           element={<IngredientsIndex ingredients={ingredients} onShowIngredient={handleShowIngredient} />}
         />
-        <Route path="/pantry" element={<PantryItemsIndex pantryItems={pantryItems} />} />
+        <Route
+          path="/pantry"
+          element={<PantryItemsIndex onDestroyPantryItem={handleDestroyPantryItem} pantryItems={pantryItems} />}
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/logout" element={<LogoutLink />} />
