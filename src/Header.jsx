@@ -22,27 +22,34 @@ export function Header() {
             <div className="collapse navbar-collapse" id="navbarNav">
               {localStorage.jwt === undefined ? (
                 <div>
-                  <Link className="nav-link " aria-current="page" to="/signup">
-                    SignUp
-                  </Link>
-
-                  <Link className="nav-link" to="/login">
-                    LogIn
-                  </Link>
+                  <div>
+                    <Link className="nav-link " aria-current="page" to="/signup">
+                      SignUp
+                    </Link>
+                  </div>
+                  <div>
+                    <Link className="nav-link" to="/login">
+                      LogIn
+                    </Link>
+                  </div>
                 </div>
               ) : (
-                <Link className="nav-link" to="/logout">
-                  LogOut
-                </Link>
+                <div>
+                  <Link className="nav-link" to="/logout">
+                    LogOut
+                  </Link>
+                </div>
               )}
-
-              <Link className="nav-link" to="/pantry">
-                myPantry
-              </Link>
-
-              <Link className="nav-link" to="/">
-                Ingredients
-              </Link>
+              <div>
+                <Link className="nav-link" to="/pantry">
+                  myPantry
+                </Link>
+              </div>
+              <div>
+                <Link className="nav-link" to="/">
+                  Ingredients
+                </Link>
+              </div>
             </div>
           </div>
         </nav>

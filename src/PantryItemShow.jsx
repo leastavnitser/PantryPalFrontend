@@ -12,9 +12,7 @@ export function PantryItemShow(props) {
     props.onUpdatePantryItem(props.pantryItem.id, formData, () => event.target.reset());
     window.location.href = "/pantry";
   };
-  const handleClick = (pantryItem) => {
-    props.onDestroyPantryItem(pantryItem);
-  };
+
   return (
     <div>
       <img src={props.pantryItem.image_url} className="mx-auto" alt="pantryItem image" width="300px" />
@@ -60,11 +58,10 @@ export function PantryItemShow(props) {
           <input defaultValue={props.pantryItem.use_by_date} className="form-control" name="use_by_date" type="text" />
           <small>DD-MM-YYYY</small>
         </div>
-        <button type="submit" className="btn btn-secondary">
+        <button type="submit" className="btn btn-danger">
           Update myPantry
         </button>
       </form>
-      <button onClick={() => handleClick(props.pantryItem)}>Delete PantryItem</button>
     </div>
   );
 }

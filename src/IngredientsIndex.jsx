@@ -30,7 +30,7 @@ export function IngredientsIndex(props) {
   return (
     <div>
       <p></p>
-      <div>
+      <div className="row g-3">
         <h2>Search Ingredients:</h2>
         <input
           type="text"

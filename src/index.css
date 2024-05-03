@@ -7,7 +7,6 @@
 .main {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #a8d7f0;
 }
 
 .cards {
@@ -79,15 +78,23 @@
 h2.card_title,p {
   margin: 1.2rem 0;
 }
+h1, h2, h3 {
+  font-family:'Courier New', Courier, monospace;
 
-h2.card_title {
-    font-size: 1.3em;
 }
-
+h2.card_title {
+  font-size: 1.3em;
+}
+header {
+  background-color:#f5afaf;
+  font-family:'Courier New', Courier, monospace;
+}
 main {
-  background-color:#bae1f7;
-padding-left:5rem;
-padding-right: 5rem;
+  background: linear-gradient(#f5afaf,rgb(255, 100, 100)) ;
+  padding-left:5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-right: 5rem;
 
 }
 :root {

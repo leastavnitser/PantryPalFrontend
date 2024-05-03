@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 export function PantryItemsIndex(props) {
-  // const handleClick = (pantryItem) => {
-  //   props.onDestroyPantryItem(pantryItem);
-  // };
+  const handleClick = (pantryItem) => {
+    props.onDestroyPantryItem(pantryItem);
+  };
   if (!props.pantryItems || props.pantryItems.length === 0) {
     return (
       <div>
@@ -28,7 +28,10 @@ export function PantryItemsIndex(props) {
                 <button className="btn btn-danger" onClick={() => props.onShowPantryItem(pantryItem)}>
                   Update
                 </button>
-                <button onClick={() => handleClick(pantryItem)}>Delete PantryItem</button>
+                <p></p>
+                <button className="btn btn-danger" onClick={() => handleClick(pantryItem)}>
+                  Delete PantryItem
+                </button>
               </div>
             </div>
           </div>
