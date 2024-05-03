@@ -23,6 +23,7 @@
 // }import React from 'react';  // Ensure React is imported
 
 // Correctly declare the Card component using function or arrow function
+import { useState } from "react";
 
 const Card = ({ ingredient, onShowIngredient }) => {
   return (
@@ -42,8 +43,12 @@ const Card = ({ ingredient, onShowIngredient }) => {
 
 // IngredientsIndex component using the Card component
 export function IngredientsIndex(props) {
+  const [searchFilter, setSearchFilter] = useState("");
+  console.log(props);
   return (
     <div>
+      <h2>Search Ingredients:</h2>
+      <input type="text" value={searchFilter} onChange={(event) => setSearchFilter(event.target.value)} />
       <h1>All Ingredients</h1>
       <div className="row row-cols-1 row-cols-md-3 g-5">
         {props.ingredients.map((ingredient) => (
