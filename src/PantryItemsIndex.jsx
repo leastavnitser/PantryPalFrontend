@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 export function PantryItemsIndex(props) {
-  const handleClick = (pantryItem) => {
-    props.onDestroyPantryItem(pantryItem);
-  };
+  // const handleClick = (pantryItem) => {
+  //   props.onDestroyPantryItem(pantryItem);
+  // };
   if (!props.pantryItems || props.pantryItems.length === 0) {
     return (
       <div>
@@ -24,7 +24,7 @@ export function PantryItemsIndex(props) {
               <p>Amount: {pantryItem.amount}</p>
               <p>Expiration: {pantryItem.use_by_date}</p>
               <img src={pantryItem.image_url} className="card-img-top" alt="..." />
-              <button onClick={() => handleClick(pantryItem)}>Delete PantryItem</button>
+              {/* <button onClick={() => handleClick(pantryItem)}>Delete PantryItem</button> */}
               <button onClick={() => props.onShowPantryItem(pantryItem)}>cute button</button>
             </div>
           </div>

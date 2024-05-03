@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export function PantryItemShow(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -5,11 +6,14 @@ export function PantryItemShow(props) {
     const formData = new FormData(event.target);
     const number = formData.get("number");
     const unit = formData.get("unit");
-    const amount = `${number} ${unit}`;
-    formData.set("amount", amount);
+    const total = `${number} ${unit}`;
+    formData.set("amount", total);
 
-    // props.onUpdatePantryItem(props.pantryItem.id, formData, () => event.target.reset());
+    props.onUpdatePantryItem(props.pantryItem.id, formData, () => event.target.reset());
     window.location.href = "/pantry";
+  };
+  const handleClick = (pantryItem) => {
+    props.onDestroyPantryItem(pantryItem);
   };
   return (
     <div>
@@ -27,15 +31,15 @@ export function PantryItemShow(props) {
               <select className="form-control" name="unit">
                 <option value="oz">Ounces (oz)</option>
                 <option value="tbsp">Tablespoons (tbsp)</option>
-                <option value="oz">Teaspoons</option>
-                <option value="oz">Cups</option>
-                <option value="oz">Pieces</option>
+                <option value="tsp">Teaspoons</option>
+                <option value="cups">Cups</option>
+                <option value="pieces">Pieces</option>
                 <option value="lb">Pounds (lb)</option>
                 <option value="g">Grams (g)</option>
                 <option value="kg">Kilograms (kg)</option>
                 <option value="ml">Milliliters (ml)</option>
                 <option value="l">Liters (l)</option>
-                <option value="cup">Cups</option>
+                <option value="shreds">Shreds</option>
               </select>
             </div>
           </div>
@@ -60,6 +64,7 @@ export function PantryItemShow(props) {
           Update myPantry
         </button>
       </form>
+      <button onClick={() => handleClick(pantryItem)}>Delete PantryItem</button>
     </div>
   );
 }
