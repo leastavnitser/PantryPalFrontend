@@ -18,7 +18,7 @@ export function PantryItemShow(props) {
   return (
     <div>
       <img src={props.pantryItem.image_url} className="mx-auto" alt="pantryItem image" width="300px" />
-      <h5 className="mt-1">{props.pantryItem.name}</h5>
+      <h5 className="mt-1">Update {props.pantryItem.name}:</h5>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <input defaultValue={props.pantryItem.id} name="pantryItem_id" type="hidden" />

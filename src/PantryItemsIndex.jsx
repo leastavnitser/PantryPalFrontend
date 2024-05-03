@@ -19,13 +19,17 @@ export function PantryItemsIndex(props) {
         {props.pantryItems.map((pantryItem) => (
           <div key={pantryItem.id}>
             <div className="border-warning mb-3">
-              <h5>Category: {pantryItem.category}</h5>
-              <h4>{pantryItem.name}</h4>
-              <p>Amount: {pantryItem.amount}</p>
-              <p>Expiration: {pantryItem.use_by_date}</p>
-              <img src={pantryItem.image_url} className="card-img-top" alt="..." />
-              {/* <button onClick={() => handleClick(pantryItem)}>Delete PantryItem</button> */}
-              <button onClick={() => props.onShowPantryItem(pantryItem)}>cute button</button>
+              <div className="card">
+                <h5>Category: {pantryItem.category}</h5>
+                <h4>{pantryItem.name}</h4>
+                <p>Amount: {pantryItem.amount}</p>
+                <p>Expiration: {pantryItem.use_by_date}</p>
+                <img src={pantryItem.image_url} className="card-img-top" alt="..." />
+                <button className="btn btn-danger" onClick={() => props.onShowPantryItem(pantryItem)}>
+                  Update
+                </button>
+                <button onClick={() => handleClick(pantryItem)}>Delete PantryItem</button>
+              </div>
             </div>
           </div>
         ))}

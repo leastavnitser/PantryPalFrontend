@@ -110,38 +110,40 @@ export function Content() {
   useEffect(handleIndexIngredients, []);
   useEffect(handleIndexPantryItems, []);
   return (
-    <main className="container">
-      <h1>Welcome to PantryPal!</h1>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <IngredientsIndex
-              ingredients={ingredients}
-              onShowIngredient={handleShowIngredient}
-              onCreateIngredient={handleCreateIngredient}
-            />
-          }
-        />
-        <Route
-          path="/pantry"
-          element={<PantryItemsIndex pantryItems={pantryItems} onShowPantryItem={handleShowPantryItem} />}
-        />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/logout" element={<LogoutLink />} />
-      </Routes>
-      <IngredientsNew />
-      <Modal show={isIngredientsShowVisible} onClose={handleClose}>
-        <IngredientsShow ingredient={currentIngredient} onCreatePantryItem={handleCreatePantryItem} />
-      </Modal>
-      <Modal show={isPantryItemShowVisible} onClose={handleClose}>
-        <PantryItemShow
-          pantryItem={currentPantryItem}
-          onUpdatePantryItem={handleUpdatePantryItem}
-          onDestroyPantryItem={handleDestroyPantryItem}
-        />
-      </Modal>
-    </main>
+    <body>
+      <main>
+        <h1>Welcome to PantryPal!</h1>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <IngredientsIndex
+                ingredients={ingredients}
+                onShowIngredient={handleShowIngredient}
+                onCreateIngredient={handleCreateIngredient}
+              />
+            }
+          />
+          <Route
+            path="/pantry"
+            element={<PantryItemsIndex pantryItems={pantryItems} onShowPantryItem={handleShowPantryItem} />}
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/logout" element={<LogoutLink />} />
+        </Routes>
+        <IngredientsNew />
+        <Modal show={isIngredientsShowVisible} onClose={handleClose}>
+          <IngredientsShow ingredient={currentIngredient} onCreatePantryItem={handleCreatePantryItem} />
+        </Modal>
+        <Modal show={isPantryItemShowVisible} onClose={handleClose}>
+          <PantryItemShow
+            pantryItem={currentPantryItem}
+            onUpdatePantryItem={handleUpdatePantryItem}
+            onDestroyPantryItem={handleDestroyPantryItem}
+          />
+        </Modal>
+      </main>
+    </body>
   );
 }
