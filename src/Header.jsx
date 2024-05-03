@@ -6,7 +6,7 @@ export function Header() {
         <nav className="navbar">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
-              PantryPal
+              <h3> PantryPal</h3>
             </Link>
             <button
               className="navbar-toggler"
@@ -24,30 +24,30 @@ export function Header() {
                 <div>
                   <div>
                     <Link className="nav-link " aria-current="page" to="/signup">
-                      SignUp
+                      <h5>SignUp</h5>
                     </Link>
                   </div>
                   <div>
                     <Link className="nav-link" to="/login">
-                      LogIn
+                      <h5>LogIn</h5>
                     </Link>
                   </div>
                 </div>
               ) : (
                 <div>
                   <Link className="nav-link" to="/logout">
-                    LogOut
+                    <h5> LogOut</h5>
                   </Link>
                 </div>
               )}
               <div>
                 <Link className="nav-link" to="/pantry">
-                  myPantry
+                  <h5>myPantry</h5>
                 </Link>
               </div>
               <div>
                 <Link className="nav-link" to="/">
-                  Ingredients
+                  <h5> Ingredients</h5>
                 </Link>
               </div>
             </div>

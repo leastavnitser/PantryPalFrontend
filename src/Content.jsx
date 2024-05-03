@@ -112,8 +112,8 @@ export function Content() {
   return (
     <body>
       <main>
-        <h1>Welcome to PantryPal!</h1>
         <Routes>
+          <Route />
           <Route
             path="/"
             element={

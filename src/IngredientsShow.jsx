@@ -17,30 +17,32 @@ export function IngredientsShow(props) {
     <div>
       <h3>Ingredient Information</h3>
 
-      <img src={props.ingredient.image_url} className="mx-auto" alt="ingredient image" width="100px" height="100px" />
+      <img src={props.ingredient.image_url} className="mx-auto" alt="ingredient image" width="200px" height="200px" />
       <h5 className="mt-1">{props.ingredient.name}</h5>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <input defaultValue={props.ingredient.id} name="ingredient_id" type="hidden" />
         </div>
         <div className="row mb-3">
-          <div className="col-sm-3">
-            Amount: <input className="form-control" name="number" type="text" />
-            <div className="col-sm-9">
-              <select className="form-control" name="unit">
-                <option value="oz">Ounces (oz)</option>
-                <option value="tbsp">Tablespoons (tbsp)</option>
-                <option value="oz">Teaspoons</option>
-                <option value="oz">Cups</option>
-                <option value="oz">Pieces</option>
-                <option value="lb">Pounds (lb)</option>
-                <option value="g">Grams (g)</option>
-                <option value="kg">Kilograms (kg)</option>
-                <option value="ml">Milliliters (ml)</option>
-                <option value="l">Liters (l)</option>
-                <option value="cup">Cups</option>
-                <option value="Shred">Shreds</option>
-              </select>
+          <div className="amount">
+            <div className="col-sm-3">
+              Amount: <input className="form-control" name="number" type="text" />
+              <div className="col-sm-9">
+                <select className="form-control" name="unit">
+                  <option value="oz">Ounces (oz)</option>
+                  <option value="tbsp">Tablespoons (tbsp)</option>
+                  <option value="oz">Teaspoons</option>
+                  <option value="oz">Cups</option>
+                  <option value="oz">Pieces</option>
+                  <option value="lb">Pounds (lb)</option>
+                  <option value="g">Grams (g)</option>
+                  <option value="kg">Kilograms (kg)</option>
+                  <option value="ml">Milliliters (ml)</option>
+                  <option value="l">Liters (l)</option>
+                  <option value="cup">Cups</option>
+                  <option value="Shred">Shreds</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>

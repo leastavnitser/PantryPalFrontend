@@ -14,24 +14,28 @@ export function PantryItemsIndex(props) {
   }
   return (
     <div>
-      <h1>myPantry Items:</h1>
+      <div className="title">
+        <h1> myPantry Items:</h1>
+      </div>
       <div className="row row-cols-1 row-cols-md-3 g-4">
         {props.pantryItems.map((pantryItem) => (
           <div key={pantryItem.id}>
             <div className="border-warning mb-3">
               <div className="card">
-                <h5>Category: {pantryItem.category}</h5>
-                <h4>{pantryItem.name}</h4>
-                <p>Amount: {pantryItem.amount}</p>
-                <p>Expiration: {pantryItem.use_by_date}</p>
-                <img src={pantryItem.image_url} className="card-img-top" alt="..." />
-                <button className="btn btn-danger" onClick={() => props.onShowPantryItem(pantryItem)}>
-                  Update
-                </button>
-                <p></p>
-                <button className="btn btn-danger" onClick={() => handleClick(pantryItem)}>
-                  Delete PantryItem
-                </button>
+                <div className="pantry-card">
+                  <h5>Category: {pantryItem.category}</h5>
+                  <h4>{pantryItem.name}</h4>
+                  <p>Amount: {pantryItem.amount}</p>
+                  <p>Expiration: {pantryItem.use_by_date}</p>
+                  <img src={pantryItem.image_url} className="card-img-top" alt="..." />
+                  <button className="btn btn-danger" onClick={() => props.onShowPantryItem(pantryItem)}>
+                    Update
+                  </button>
+                  <p></p>
+                  <button className="btn btn-danger" onClick={() => handleClick(pantryItem)}>
+                    Delete PantryItem
+                  </button>
+                </div>
               </div>
             </div>
           </div>

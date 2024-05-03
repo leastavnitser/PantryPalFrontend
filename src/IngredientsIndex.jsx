@@ -29,24 +29,30 @@ export function IngredientsIndex(props) {
   };
   return (
     <div>
-      <p></p>
-      <div className="row g-3">
-        <h2>Search Ingredients:</h2>
-        <input
-          type="text"
-          value={searchFilter}
-          onChange={(event) => setSearchFilter(event.target.value)}
-          list="ingredient-suggestions"
-          className="form-control"
-          placeholder="Search for ingredients..."
-        />
-        <datalist id="ingredient-suggestions">
-          {props.ingredients.map((ingredient) => (
-            <option key={ingredient.id} value={ingredient.name} />
-          ))}
-        </datalist>
-        <div>
-          <h2>Custom Ingredient</h2>
+      <h1>All Ingredients:</h1>
+      <p> </p>
+      <div className="search-custom">
+        <div className="col-5">
+          <h2>Search Ingredients:</h2>
+          <input
+            type="text"
+            value={searchFilter}
+            onChange={(event) => setSearchFilter(event.target.value)}
+            list="ingredient-suggestions"
+            className="form-control"
+            placeholder="Search for ingredients..."
+          />
+          <button type="submit" className="btn btn-outline-danger">
+            Create Ingredient
+          </button>
+          <datalist id="ingredient-suggestions">
+            {props.ingredients.map((ingredient) => (
+              <option key={ingredient.id} value={ingredient.name} />
+            ))}
+          </datalist>
+        </div>
+        <div className="col-6">
+          <h2>Custom Ingredient:</h2>
           <form onSubmit={handleSubmit}>
             <div className="row g-3">
               <div className="col">
@@ -62,7 +68,6 @@ export function IngredientsIndex(props) {
           </form>
         </div>
       </div>
-      <h1>All Ingredients</h1>
       <div className="row row-cols-1 row-cols-md-3 g-5">
         {filteredIngredients.map((ingredient) => (
           <div key={ingredient.id} className="col">

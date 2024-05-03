@@ -5,21 +5,28 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(255, 177, 177, 0.6);
   z-index: 1000;
 }
 
 .modal-main {
   position: fixed;
-  background: white;
+  background: rgb(252, 205, 205);
   width: 80%;
   height: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 1em;
+  padding: 3rem;
+  align-content: center;
+  border-style:double;
+  border-width: 10px;
+  border-radius: 5%;
+  text-align: center;
 }
-
+.amount{
+  align-content: center;
+}
 .modal-main button.close {
   font-size: 2em;
   background: none;
