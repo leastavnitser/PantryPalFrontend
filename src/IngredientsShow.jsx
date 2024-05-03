@@ -39,6 +39,7 @@ export function IngredientsShow(props) {
                 <option value="ml">Milliliters (ml)</option>
                 <option value="l">Liters (l)</option>
                 <option value="cup">Cups</option>
+                <option value="Shred">Shreds</option>
               </select>
             </div>
           </div>

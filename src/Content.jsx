@@ -115,28 +115,32 @@ export function Content() {
       <Routes>
         <Route
           path="/"
-          element={<IngredientsIndex ingredients={ingredients} onShowIngredient={handleShowIngredient} />}
+          element={
+            <IngredientsIndex
+              ingredients={ingredients}
+              onShowIngredient={handleShowIngredient}
+              onCreateIngredient={handleCreateIngredient}
+            />
+          }
         />
         <Route
           path="/pantry"
-          element={
-            <PantryItemsIndex
-              onDestroyPantryItem={handleDestroyPantryItem}
-              pantryItems={pantryItems}
-              onShowPantryItem={handleShowPantryItem}
-            />
-          }
+          element={<PantryItemsIndex pantryItems={pantryItems} onShowPantryItem={handleShowPantryItem} />}
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/logout" element={<LogoutLink />} />
       </Routes>
-      <IngredientsNew onCreateIngredient={handleCreateIngredient} />
+      <IngredientsNew />
       <Modal show={isIngredientsShowVisible} onClose={handleClose}>
         <IngredientsShow ingredient={currentIngredient} onCreatePantryItem={handleCreatePantryItem} />
       </Modal>
       <Modal show={isPantryItemShowVisible} onClose={handleClose}>
-        <PantryItemShow pantryItem={currentPantryItem} onUpdatePantryItem={handleUpdatePantryItem} />
+        <PantryItemShow
+          pantryItem={currentPantryItem}
+          onUpdatePantryItem={handleUpdatePantryItem}
+          onDestroyPantryItem={handleDestroyPantryItem}
+        />
       </Modal>
     </main>
   );

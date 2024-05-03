@@ -55,35 +55,38 @@ export function IngredientsIndex(props) {
   };
   return (
     <div>
-      <h2>Search Ingredients:</h2>
-      <input
-        type="text"
-        value={searchFilter}
-        onChange={(event) => setSearchFilter(event.target.value)}
-        list="ingredient-suggestions"
-        className="form-control"
-        placeholder="Search for ingredients..."
-      />
-      <datalist id="ingredient-suggestions">
-        {props.ingredients.map((ingredient) => (
-          <option key={ingredient.id} value={ingredient.name} />
-        ))}
-      </datalist>
+      <p></p>
       <div>
-        <h1>New Ingredient</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="row g-3">
-            <div className="col">
-              Name: <input name="name" type="text" className="form-control" />
+        <h2>Search Ingredients:</h2>
+        <input
+          type="text"
+          value={searchFilter}
+          onChange={(event) => setSearchFilter(event.target.value)}
+          list="ingredient-suggestions"
+          className="form-control"
+          placeholder="Search for ingredients..."
+        />
+        <datalist id="ingredient-suggestions">
+          {props.ingredients.map((ingredient) => (
+            <option key={ingredient.id} value={ingredient.name} />
+          ))}
+        </datalist>
+        <div>
+          <h2>Custom Ingredient</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="row g-3">
+              <div className="col">
+                Name: <input name="name" type="text" className="form-control" />
+              </div>
+              <div className="col">
+                Image Url: <input name="image_url" type="text" className="form-control" />
+              </div>
+              <button type="submit" className="btn btn-outline-danger">
+                Create Ingredient
+              </button>
             </div>
-            <div className="col">
-              Image Url: <input name="image_url" type="text" className="form-control" />
-            </div>
-            <button type="submit" className="btn btn-outline-danger">
-              Create Ingredient
-            </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
       <h1>All Ingredients</h1>
       <div className="row row-cols-1 row-cols-md-3 g-5">

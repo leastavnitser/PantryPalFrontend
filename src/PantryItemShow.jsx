@@ -64,7 +64,7 @@ export function PantryItemShow(props) {
           Update myPantry
         </button>
       </form>
-      <button onClick={() => handleClick(pantryItem)}>Delete PantryItem</button>
+      <button onClick={() => handleClick(props.pantryItem)}>Delete PantryItem</button>
     </div>
   );
 }
