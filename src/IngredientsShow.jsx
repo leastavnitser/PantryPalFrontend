@@ -61,7 +61,7 @@ export function IngredientsShow(props) {
           Use By Date: <input className="form-control" name="use_by_date" type="text" />
           <small>DD-MM-YYYY</small>
         </div>
-        <button type="submit" className="btn btn-secondary">
+        <button type="submit" className="btn btn-danger">
           Add to Pantry!
         </button>
       </form>
