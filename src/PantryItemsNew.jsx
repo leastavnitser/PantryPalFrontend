@@ -7,9 +7,7 @@ export function PantryItemsNew(props) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-       <div>
-        <
-      </div>
+        <div></div>
       </form>
     </div>
   );

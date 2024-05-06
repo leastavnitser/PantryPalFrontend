@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
 const Card = ({ ingredient, onShowIngredient }) => {
@@ -43,7 +44,7 @@ export function IngredientsIndex(props) {
             placeholder="Search for ingredients..."
           />
           <button type="submit" className="btn btn-outline-danger">
-            Create Ingredient
+            Search Ingredient
           </button>
           <datalist id="ingredient-suggestions">
             {props.ingredients.map((ingredient) => (

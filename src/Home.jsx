@@ -6,8 +6,8 @@ export function Home() {
         <h3>
           <div className="cardfont">
             The best fridge and pantry management system on the market! Our groundbreaking technology will be sure to
-            help you cook more efficiently and sustainably . Join us and stay a while! Your pantry will thank us later
-            :)
+            help you cook more efficiently and sustainably . Join us and stay a while! Your home and pantry will thank
+            us later :)
           </div>
         </h3>
         <a>Founder and CEO, Lea Stavnitser</a>

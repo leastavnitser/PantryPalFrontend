@@ -15,10 +15,10 @@ export function IngredientsShow(props) {
   };
   return (
     <div>
-      <h3>Ingredient Information</h3>
+      <h2>Ingredient Information</h2>
 
-      <img src={props.ingredient.image_url} className="mx-auto" alt="ingredient image" width="200px" height="200px" />
-      <h5 className="mt-1">{props.ingredient.name}</h5>
+      <img src={props.ingredient.image_url} className="modal-img" alt="ingredient image" />
+      <h3 className="mt-1">{props.ingredient.name}</h3>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <input defaultValue={props.ingredient.id} name="ingredient_id" type="hidden" />
