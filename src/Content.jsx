@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Home } from "./Home";
 import { IngredientsIndex } from "./IngredientsIndex";
 import { IngredientsNew } from "./IngredientsNew";
 import { IngredientsShow } from "./IngredientsShow";
@@ -67,20 +68,6 @@ export function Content() {
       successCallback();
     });
   };
-  // const handleUpdatePantryItem = (id, params) => {
-  //   axios.patch(`http://localhost:3000/pantry_items/${id}.json`, params).then((response) => {
-  //     setPantryItems(
-  //       pantryItems.map((pantryItem) => {
-  //         if (pantryItem.id === response.data.id) {
-  //           return response.data;
-  //         } else {
-  //           return pantryItem;
-  //         }
-  //       })
-  //     );
-  //     handleClose();
-  //   });
-  // };
   const handleShowIngredient = (ingredient) => {
     console.log("handleShowIngredient", ingredient);
     setIsIngredientsShowVisible(true);
@@ -113,9 +100,9 @@ export function Content() {
     <body>
       <main>
         <Routes>
-          <Route />
+          <Route path="/" element={<Home />} />
           <Route
-            path="/"
+            path="/home"
             element={
               <IngredientsIndex
                 ingredients={ingredients}
@@ -126,7 +113,13 @@ export function Content() {
           />
           <Route
             path="/pantry"
-            element={<PantryItemsIndex pantryItems={pantryItems} onShowPantryItem={handleShowPantryItem} />}
+            element={
+              <PantryItemsIndex
+                pantryItems={pantryItems}
+                onShowPantryItem={handleShowPantryItem}
+                onDestroyPantryItem={handleDestroyPantryItem}
+              />
+            }
           />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
@@ -137,11 +130,7 @@ export function Content() {
           <IngredientsShow ingredient={currentIngredient} onCreatePantryItem={handleCreatePantryItem} />
         </Modal>
         <Modal show={isPantryItemShowVisible} onClose={handleClose}>
-          <PantryItemShow
-            pantryItem={currentPantryItem}
-            onUpdatePantryItem={handleUpdatePantryItem}
-            onDestroyPantryItem={handleDestroyPantryItem}
-          />
+          <PantryItemShow pantryItem={currentPantryItem} onUpdatePantryItem={handleUpdatePantryItem} />
         </Modal>
       </main>
     </body>

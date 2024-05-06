@@ -5,7 +5,7 @@ export function Header() {
       <div className="banner">
         <nav className="navbar">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/">
+            <Link className="navbar-brand" to="/home">
               <h3> PantryPal</h3>
             </Link>
             <button
