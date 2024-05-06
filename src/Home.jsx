@@ -10,6 +10,7 @@ export function Home() {
             :)
           </div>
         </h3>
+        <a>Founder and CEO, Lea Stavnitser</a>
         <img
           className="imagehome"
           src="https://images.squarespace-cdn.com/content/v1/602065399c6bdd6741ed57e1/1629220813691-0VVAXP466C0AJWI81DSS/phony+signature.png"
@@ -22,10 +23,11 @@ export function Home() {
         <h3>
           <div className="cardfont">
             Easily manage your fridge and pantry by adding ingredients that you have in stock to yourPantry. making meal
-            prep a breeze while also managing
+            prep a breeze while also managing expiration dates to cut down on personal waste
           </div>
         </h3>
       </div>
+      <h1>Click the PantryPal logo to begin! </h1>
     </div>
   );
 }

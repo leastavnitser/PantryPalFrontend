@@ -94,7 +94,10 @@
   align-content: end;
   width: 20rem;
 }
-
+.cartimg {
+  height: 20rem;
+  width: 20rem;
+}
 h2.card_title,p {
   margin: 1.2rem 0;
 }
