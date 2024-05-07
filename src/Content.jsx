@@ -11,6 +11,7 @@ import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
 import { Modal } from "./Modal";
 import { Signup } from "./Signup";
+import { RecipesIndex } from "./RecipesIndex";
 
 export function Content() {
   const [ingredients, setIngredients] = useState([]);
@@ -97,42 +98,41 @@ export function Content() {
   useEffect(handleIndexIngredients, []);
   useEffect(handleIndexPantryItems, []);
   return (
-    <body>
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/home"
-            element={
-              <IngredientsIndex
-                ingredients={ingredients}
-                onShowIngredient={handleShowIngredient}
-                onCreateIngredient={handleCreateIngredient}
-              />
-            }
-          />
-          <Route
-            path="/pantry"
-            element={
-              <PantryItemsIndex
-                pantryItems={pantryItems}
-                onShowPantryItem={handleShowPantryItem}
-                onDestroyPantryItem={handleDestroyPantryItem}
-              />
-            }
-          />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/logout" element={<LogoutLink />} />
-        </Routes>
-        <IngredientsNew />
-        <Modal show={isIngredientsShowVisible} onClose={handleClose}>
-          <IngredientsShow ingredient={currentIngredient} onCreatePantryItem={handleCreatePantryItem} />
-        </Modal>
-        <Modal show={isPantryItemShowVisible} onClose={handleClose}>
-          <PantryItemShow pantryItem={currentPantryItem} onUpdatePantryItem={handleUpdatePantryItem} />
-        </Modal>
-      </main>
-    </body>
+    <main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/home"
+          element={
+            <IngredientsIndex
+              ingredients={ingredients}
+              onShowIngredient={handleShowIngredient}
+              onCreateIngredient={handleCreateIngredient}
+            />
+          }
+        />
+        <Route
+          path="/pantry"
+          element={
+            <PantryItemsIndex
+              pantryItems={pantryItems}
+              onShowPantryItem={handleShowPantryItem}
+              onDestroyPantryItem={handleDestroyPantryItem}
+            />
+          }
+        />
+        <Route path="/recipes" element={<RecipesIndex />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/logout" element={<LogoutLink />} />
+      </Routes>
+      <IngredientsNew />
+      <Modal show={isIngredientsShowVisible} onClose={handleClose}>
+        <IngredientsShow ingredient={currentIngredient} onCreatePantryItem={handleCreatePantryItem} />
+      </Modal>
+      <Modal show={isPantryItemShowVisible} onClose={handleClose}>
+        <PantryItemShow pantryItem={currentPantryItem} onUpdatePantryItem={handleUpdatePantryItem} />
+      </Modal>
+    </main>
   );
 }

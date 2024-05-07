@@ -5,7 +5,7 @@ const Card = ({ ingredient, onShowIngredient }) => {
   return (
     <div className="card">
       <div className="card_image">
-        <img src={ingredient.image_url} className="card-img-top" alt={ingredient.name} />
+        <img src={ingredient.image_url} className="ingredient-img" alt={ingredient.name} />
       </div>
       <div className="card_content">
         <h2 className="card_title">{ingredient.name}</h2>

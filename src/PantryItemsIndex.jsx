@@ -27,7 +27,7 @@ export function PantryItemsIndex(props) {
                   <h4>{pantryItem.name}</h4>
                   <p>Amount: {pantryItem.amount}</p>
                   <p>Expiration: {pantryItem.use_by_date}</p>
-                  <img src={pantryItem.image_url} className="card-img-top" alt="..." />
+                  <img src={pantryItem.image_url} className="pantry-img" alt="..." />
                   <button className="btn btn-danger" onClick={() => props.onShowPantryItem(pantryItem)}>
                     Update
                   </button>

@@ -46,6 +46,11 @@ export function Header() {
                 </Link>
               </div>
               <div>
+                <Link className="nav-link" to="/recipes">
+                  <h5>myRecipes</h5>
+                </Link>
+              </div>
+              <div>
                 <Link className="nav-link" to="/">
                   <h5> homePage</h5>
                 </Link>

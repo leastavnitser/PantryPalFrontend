@@ -15,7 +15,7 @@ export function PantryItemShow(props) {
 
   return (
     <div>
-      <img src={props.pantryItem.image_url} className="mx-auto" alt="pantryItem image" width="300px" />
+      <img src={props.pantryItem.image_url} className="pantry-img" alt="pantryItem image" />
       <h5 className="mt-1">Update {props.pantryItem.name}:</h5>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">

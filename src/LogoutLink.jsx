@@ -10,7 +10,7 @@ export function LogoutLink() {
 
   return (
     <div className="container bucket">
-      <h4>Ready to leave? We hope to see you again soon!</h4>
+      <h3>Ready to leave? We hope to see you again soon!</h3>
       <button href="#" onClick={handleClick} className="btn btn-outline-danger">
         Logout
       </button>
