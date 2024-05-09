@@ -71,7 +71,7 @@
   font-family:monospace;
 }
 
-.pantry-card {
+.pantry-card, .recipe-card {
   padding-bottom: 1.8rem;
   padding-top: 1.8rem;
   padding-left: 1rem;
@@ -139,6 +139,10 @@ footer{
   font-size: medium;
  
   
+}
+.recipe-img{
+  height: 20rem;
+  width: 20rem;
 }
 main {
   background: linear-gradient(#f5afaf,rgb(255, 100, 100)) ;
