@@ -1,53 +1,3 @@
-// /* eslint-disable no-unused-vars */
-// /* eslint-disable no-undef */
-// import { useEffect, useState } from "react";
-// import axios from "axios";
-
-// export function RecipesIndex() {
-//   const [allRecipes, setAllRecipes] = useState([]);
-//   useEffect(() => {
-//     getRecipes();
-//   }, []);
-//   const getRecipes = async () => {
-//     try {
-//       const response = await fetch(
-//         `https://api.spoonacular.com/recipes/random?apiKey=${import.meta.env.VITE_SPOONACULAR_API_KEY}&number=15`
-//       );
-//       if (!response.ok) {
-//         throw new Error("Network response was not ok");
-//       }
-//       const data = await response.json();
-//       console.log(data);
-//       setAllRecipes(data.recipes);
-//     } catch (error) {
-//       console.error("Error fetching data:", error);
-//     }
-//   };
-
-//   return (
-//     <div className="">
-//       <h1>All Recipes</h1>
-//       <div className="row row-cols-3 row-cols-md-3 ">
-//         <div>
-//           {allRecipes.map((recipe) => {
-//             return (
-//               <div className="card" key={recipe.id}>
-//                 <div className="pantry-cards">
-//                   <h3>{recipe.title}</h3>
-//                   <img className="pantry-img" src={recipe.image} alt={recipe.name} />
-//                   <div>
-//                     Recipe Link:
-//                     <h4>{recipe.sourceUrl}</h4>
-//                   </div>
-//                 </div>
-//               </div>
-//             );
-//           })}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 import { useEffect, useState } from "react";
 import axios from "axios";
 export function RecipesIndex() {
@@ -73,7 +23,7 @@ export function RecipesIndex() {
   return (
     <div className="container mt-3">
       <h1>favorites:</h1>
-      <h1 className="mb-3 text-center">All Recipes</h1>
+      <h1 className="mb-3 text-center">Popular Picks</h1>
       <div className="row">
         {allRecipes.map((recipe) => (
           <div className="col-md-4 mb-4" key={recipe.id}>
