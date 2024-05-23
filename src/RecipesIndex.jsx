@@ -23,8 +23,8 @@ export function RecipesIndex() {
   };
   return (
     <div className="container mt-3">
-      <h1>favorites:</h1>
-      <h1 className="mb-3 text-center">Popular Picks</h1>
+      <h1></h1>
+      <h1 className="mb-3 text-center">Popular Recipes</h1>
       <div className="row">
         {allRecipes.map((recipe) => (
           <div className="col-md-4 mb-4" key={recipe.id}>
